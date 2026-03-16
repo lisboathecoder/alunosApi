@@ -1,4 +1,4 @@
-import AlunoModel from '../models/ExemploModel.js';
+import AlunoModel from '../models/AlunoModel.js';
 
 export const criar = async (req, res) => {
     try {
