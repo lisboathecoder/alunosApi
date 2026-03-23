@@ -1,7 +1,8 @@
 import express from 'express';
 import 'dotenv/config';
 import alunosRoutes from './routes/alunoRoute.js';
-import pdfRoutes from './routes/pdfRoute.js'
+import pdfRoutes from './routes/pdfRoute.js';
+import fotoRoutes from './routes/fotoRoute.js';
 
 const app = express();
 app.use(express.json());
@@ -9,12 +10,13 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('🚀 API funcionando');
+    res.send('Api de Alunos está rodando!');
 });
 
 // Rotas
 app.use('/alunos', alunosRoutes);
 app.use('/alunos', pdfRoutes);
+app.use('/alunos', fotoRoutes);
 app.use('/uploads', express.static('uploads'));
 
 app.use((req, res) => {
